@@ -11,3 +11,12 @@ customer obsession - одержимость клиентами (например
 4) Избежание рисков
 5) Исследование новых рынков и продуктов
 
+
+Слои:
+
+  Staging				Storage						Business layer
+
+   OLTP				      DW					    BI solution
+   Files			 Data Platfrom (DW+DL)	 		 
+   SFTP
+   API
