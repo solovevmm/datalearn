@@ -1,0 +1,22 @@
+
+ODBC (open database connectivity) - используется в Windows
+
+JDBC (java database connectivity) - используется в остальных
+
+DDL (data defenition language)			DML (data manipulation language)
+		create										select							
+		comment										insert
+													update
+		rename										delete
+		alter										merge
+		
+		truncate
+		drop
+
+
+Pirates metrics (AAARR):
+acquisition (приобритение) - как мы получаем клиентов (SEO, SEM, widgets, email, blogs etc)
+activation  (активация)    - что сделал пришедший клиент: подписался, поиспользовал и тд
+retention   (удержание)    - когда клиент перестал пользоваться, это тоже надо отслеживать, что б привлечь обратно 
+revenue     (доход)        - клиенты, которые заплатили (transactions, clicks, subscriptions, DLC)
+referral    (рефералки)    - пришедшие клиенты приглашают других (email, widgets etc)
