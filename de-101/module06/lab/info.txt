@@ -1,0 +1,7 @@
+credentions ROOT:
+	   access key: AKIAWUBPKDUOZGKWEDWQ
+secret access key: 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
+
+redshift cluster:
+awsuser
+Awspassword1

@@ -1,0 +1,84 @@
+Характеристики хранилища данных:
+1) Subject-oriented - данные объединяются в соответсвии с бизнес областями, а не с приложениями, которые используются
+2) Integrated - объединяются так, чтобы удовлетворялись потрености предприятния в целом, а не единственной функции бизнеса
+3) Nonvoltile - некорректироваемость
+4) Time-variant - данные привязанны к промежутку времени
+
+
+MPP - massive parallel processing (shared nothing)
+- multi-node (server) system
+- data stored externally
+- scale-out - add more compute nodes, each with dedicated CPU, memory & I/O subsustems
+- no single point of contention
+
+SMP - symmetric multi-processing (shared everything)
+- tradition one server system
+- data stored locally
+- scale-up only - physical limitations to scaling to accommodate workload
+- processors share single OS, memory, I/O devices
+
+
+		row-stored 									column-stored
++ easy to add/modify record				+ only need to read in relevant data
+- might read in unnessesary data		- tuple writes require multiple accesses
+
+							OLTP										OLAP
+	   function:     day to day operations						 decision support
+database design:     application oriented	    				 subject oriented 
+          usage:     repetitive									 ad-hoc
+           data:     current, up-to-date detailed, isolated		 historical, summarized, consolidated
+         access:     read/write									 lots of scans
+   unit of work:     short, simple transactions 				 complex query
+  database size:     gigabytes									 terabytes
+         metric:     transaction throughtput					 query throughput, response
+
+collect statistic - оптимизация (после ETL выполнилнять)
+
+
+Роль дата инженера:
+Входные данные:
+1) Понять, что хочет заказчик
+2) Понять, где создаются данные, в каком формате, как часто, как много (Volume, Variety, Velocity)
+3) Понять, в каком виде их нужно преподнести
+
+Выходные данные:
+1) Тип хранения - DW/Data lake
+2) Инструмент загрузки и трансформации - ETL/ELT/Stream
+3) Интерфейс для взаимодействия с данными - Dimensional model, Tableau data model/Source
+
+Бонус: безопасность, приватность, версионность кода, проверка кода, уведомления, документация, data lineage, data catalog
+
+
+Ниже информация для Redshift
+
+Constraints:
+null/not null - enforced
+  primary key - not enforced
+  foreign key - not enforced 
+       unique - not enforced
+   references - not enforced
+
+
+Sort key:
+1) Compound - указываем, как мы хотим сортировать данные (например, по дате)
+2) Interlived - gives equal weight to each column, or subset of columns in the sort key
+
+Distribution style:
+1) All - All data on every node (все данные на каждую ноду) (example: data that doesn't change)
+2) Even - round robin distribution (равномерно раскидывает) ()
+3) distribution key - key value to same location (example: large fact table in star schema)
+
+Compression - storing less data lower costs, reduce disk I/O, encoding on each column
+
+Bulk insert - вставка на базе select'a (insert into table1 (select * from table2))
+
+Error checking - stl_load_errors, stl_loaderror_detail
+
+workload managment - расставить приоритеты для процессов, кому сколько ресурсов в первую очередь
+
+vacuum - re-stores rows and reclaims space in either a specified table or all tables in the current database. Пересортировка строк после удаления (vacuum full, vacuum sort only, vacum delete only). Дорогая операция, ставить на ночь
+
+
+ETL job = DAG
+
+Operational analytics is the process of using data analysis and business intelligence to improve efficiency and streamline everyday operations in real time

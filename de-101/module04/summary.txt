@@ -1,0 +1,75 @@
+Design for failure:
+-check connection
+-ping host
+-row count checking
+-checking folder for existing file 
+-check table or column exists
+-timeout for FTP, API, SSH
+-retry
+-independent
+-version
+
+Стараться избегать excel файлов. (Например, заранее договориться, что б формат был .csv)
+
+Data profiling:
+-null count in column/table
+-distinct values
+-min/max/avg значений
+-min/max/avg string length
+-patterns (date, phone number)
+-data distribution (распределение данных)
+
+Validation:
+-кол-во строк в источнике = кол-во строк в target
+-сумма значений
+и тд
+
+Data transformations:
+-SCD
+-lookup
+-pivot/unpivot
+-parameters
+-loops
+-aggregation
+-create new fields
+-sorting, join, union
+
+Ральфу Кимбалл
+Data extracting
+1.  Data Profiling System
+2.  Change Data Capture (Source data based, trigger-based, snapshot based, log-based)
+3.  Extracting system
+Cleaning and conforming
+4.  Data cleaning and quality screen handler system
+5.  Error event handler
+6.  Audit data
+7.  Deduplication system
+8.  Data conformer
+Data delivery
+9.  Slowly changing dimension (passive method, Overwriting the old value, create a new record, add a new column, historical table)
+10. Surrogate key creation system
+11. Hierarchy dimension builder
+12. Special dimension builder (Junk, mini, shrunked or rolled, static, user maintained dimensions)
+13. Fact table loader (transaction grain, periodic snapshot, accumulating snapshot)
+14. Surrogate key pipeline
+15. Multi-value dimension bridge table builder
+16. Late-arriving data handler
+17. Dimension manager system
+18. Fact table provider system
+19. Aggregate builder
+20. Multidimensional (OLAP) Cube builder
+21. Data integration manager
+Managing ETL Environment
+22. Job sheduler
+23. Backup system 
+24. Recovery and restart system
+25. Version control system
+26. Version migration system from test to production
+27. Workflow monitor
+28. Sort system
+29. Lineage and dependency analyzer
+30. Problem escalation system
+31. Parallelizing/Pipelining system
+32. Security system
+33. Compliance Reporter
+34. Metadata repository manager

@@ -1,0 +1,52 @@
+
+Иновации в индустрии:
+1) Clustering - redundancy, failover. Кластер - независимые ИТ ресурсы, соединенные сетью и работающие как единая система
+2) Grid computing - форма распределенных вычислений (несколько кластеров)
+3) Virtualization - можно запустить несколько виртуальных машин
+
+Облачные сервис модели:
+SaaS - software 	  as a service (виртуальная машина + настроенная база данных + приложение(dynmo db, например))
+PaaS - platform 	  as a service (виртуальная машина+настроенная база данных)						доступ к последнему элементу
+IaaS - infrastructure as a service (виртуальная машина)
+
+Зоны ответственности IaaS, PaaS, SaaS:
+
+   aplications - SaaS
+          data
+       runtime - PaaS
+    middleware
+           o/s
+virtualization - IaaS 
+       servers
+       storage
+    networking
+	
+Cloud deployments models:
+public clouds - AWS, Azure, GCP
+Hybrid clouds - композиция из двух или несколько: private, community, public
+Community cloud - конкретное решение для конкретного сообщества
+
+Безопасность:
+Data classification & accountability - 
+       client & end-point protection -                 SaaS/2
+         identity & access managment -         PaaS/2  SaaS/2
+          application level controls -         PaaS/2  SaaS
+                   netfwork controls - IaaS/2  PaaS    SaaS
+                 host infrastructure - IaaS/2  PaaS    SaaS
+                   physical security - IaaS    PaaS    SaaS
+
+Ключевые вопросы для архитектуры проекта:
+1) Why   - какую проблему мы хотим решить, какие бизнес цели
+2) Who   - для кого мы решаем эту проблему, кто вовлечен в проект
+3) What  - бизнес и технические требования
+4) Where - где приложение/сервис будет использоватсья (данные, законы и тд)
+5) When  - когда нужно предоставить работающее приложение
+6) How   - как можно выполнить этот проект
+
+Стратегии миграции:
+1) Lift and Shift - перенос без остановки решения
+2) Lift and Reshape - перенос и обновление до самой новой версии
+3) Rewrite/Decouple applications - разделяем наше приложение на части и переносим по частям
+4) Drop and Shop - просто заменяем решение 
+5) Retire/Decomission - часть выкинуть
+6) Retain/Not Moving - ничего не мигрировать
